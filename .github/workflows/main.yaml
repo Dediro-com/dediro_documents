@@ -12,8 +12,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install AWS CLI
-        run: sudo apt-get install awscli
+      - name: Update package list
+        run: sudo apt-get update
+
+      - name: Install AWS CLI with fix-missing
+        run: sudo apt-get install -y awscli --fix-missing
 
       - name: List Files in S3
         id: list_s3
