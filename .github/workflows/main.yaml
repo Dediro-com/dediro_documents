@@ -18,22 +18,34 @@ jobs:
       - name: Install AWS CLI with fix-missing
         run: sudo apt-get install -y awscli --fix-missing
 
+      - name: Configure AWS CLI
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set default.region us-east-1
+
       - name: List Files in S3
         id: list_s3
         run: |
+          set -x  # Enable debug mode
           aws s3 ls s3://${{ secrets.AWS_S3_BUCKET }}/logs/ > s3_files.txt
           cat s3_files.txt
+        continue-on-error: true
 
       - name: Check for Existing Files
         id: check_files
         run: |
-          FILES_TO_UPLOAD=()
-          for file in logs/*; do
-            if ! grep -q $(basename $file) s3_files.txt; then
-              FILES_TO_UPLOAD+=($file)
-            fi
-          done
-          echo "FILES_TO_UPLOAD=${FILES_TO_UPLOAD[@]}" >> $GITHUB_ENV
+          if [ -s s3_files.txt ]; then
+            FILES_TO_UPLOAD=()
+            for file in logs/*; do
+              if ! grep -q $(basename $file) s3_files.txt; then
+                FILES_TO_UPLOAD+=($file)
+              fi
+            done
+            echo "FILES_TO_UPLOAD=${FILES_TO_UPLOAD[@]}" >> $GITHUB_ENV
+          else
+            echo "No existing files found in S3 or failed to list files."
+          fi
 
       - name: Upload to S3
         if: env.FILES_TO_UPLOAD != ''
