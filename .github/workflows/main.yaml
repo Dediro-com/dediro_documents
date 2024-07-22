@@ -1,4 +1,4 @@
-name: Upload Website
+name: Backup To S3
 
 on:
   push:
@@ -8,6 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -61,3 +63,21 @@ jobs:
       - name: No Files to Upload
         if: env.FILES_TO_UPLOAD == ''
         run: echo "No new files to upload."
+
+      - name: Slack Notification - Success
+        if: success()
+        uses: act10ns/slack@v1
+        with:
+          status: success
+          channel: '#backup'
+          message: "Backup to S3 succeeded. Uploaded files: ${{ env.FILES_TO_UPLOAD }}"
+          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Slack Notification - Failure
+        if: failure()
+        uses: act10ns/slack@v1
+        with:
+          status: failure
+          channel: '#backup'
+          message: "Backup to S3 failed."
+          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
