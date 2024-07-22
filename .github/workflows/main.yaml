@@ -28,7 +28,7 @@ jobs:
         id: list_s3
         run: |
           set -x  # Enable debug mode
-          aws s3 ls s3://${{ secrets.AWS_S3_BUCKET }}/logs/ > s3_files.txt
+          aws s3 ls s3://${{ secrets.AWS_S3_BUCKET }} > s3_files.txt
           cat s3_files.txt
         continue-on-error: true
 
