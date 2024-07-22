@@ -50,6 +50,7 @@ jobs:
           fi
 
       - name: Upload to S3
+        id: upload_s3
         if: env.FILES_TO_UPLOAD != ''
         uses: jakejarvis/s3-sync-action@master
         with:
@@ -59,13 +60,10 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           SOURCE_DIR: 'logs'
+        continue-on-error: true
 
-      - name: No Files to Upload
-        if: env.FILES_TO_UPLOAD == ''
-        run: echo "No new files to upload."
-
-      - name: Slack Notification - Success
-        if: success()
+      - name: Slack Notification - S3 Upload Success
+        if: steps.upload_s3.conclusion == 'success'
         uses: act10ns/slack@v1
         with:
           status: success
@@ -73,11 +71,20 @@ jobs:
           message: "Backup to S3 succeeded. Uploaded files: ${{ env.FILES_TO_UPLOAD }}"
           webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
 
-      - name: Slack Notification - Failure
-        if: failure()
+      - name: Slack Notification - S3 Upload Failure
+        if: steps.upload_s3.conclusion == 'failure'
         uses: act10ns/slack@v1
         with:
           status: failure
           channel: '#backup'
           message: "Backup to S3 failed."
+          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: No Files to Upload
+        if: env.FILES_TO_UPLOAD == ''
+        uses: act10ns/slack@v1
+        with:
+          status: success
+          channel: '#backup'
+          message: "Everything already backed up."
           webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
