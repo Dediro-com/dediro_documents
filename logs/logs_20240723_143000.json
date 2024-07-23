@@ -1,0 +1,112 @@
+[
+    {
+        "query": "How does blockchain technology work?",
+        "outline_agent": {
+            "main_title": "Understanding Blockchain Technology",
+            "themes": [
+                {
+                    "title": "Fundamentals",
+                    "query": "What are the fundamentals of blockchain technology?",
+                    "description": "Blockchain is a decentralized digital ledger that records transactions across multiple computers."
+                },
+                {
+                    "title": "Applications",
+                    "query": "What are the applications of blockchain technology?",
+                    "description": "Blockchain has various applications, including cryptocurrency, supply chain management, and more."
+                }
+            ],
+            "metrics": {
+                "tokens": 140,
+                "cost": 0.07
+            }
+        },
+        "research_agent": {
+            "sources": {
+                "Fundamentals": {
+                    "web_sources": {
+                        "title": "Blockchain Fundamentals",
+                        "author": "David Clark",
+                        "date": "2024-04-01",
+                        "url": "https://example.com/blockchain-fundamentals",
+                        "content": "Blockchain is a decentralized digital ledger that records transactions."
+                    },
+                    "dataset_sources": {
+                        "title": "Understanding Blockchain",
+                        "author": "Mark Lee",
+                        "date": "2024-03-25",
+                        "url": "https://example.com/understanding-blockchain",
+                        "content": "Blockchain technology provides a secure and transparent way to record transactions."
+                    }
+                },
+                "Applications": {
+                    "web_sources": {
+                        "title": "Blockchain Applications",
+                        "author": "Sophia Turner",
+                        "date": "2024-04-02",
+                        "url": "https://example.com/blockchain-applications",
+                        "content": "Blockchain technology has applications in various fields such as cryptocurrency and supply chain management."
+                    },
+                    "dataset_sources": {
+                        "title": "Uses of Blockchain",
+                        "author": "James White",
+                        "date": "2024-03-28",
+                        "url": "https://example.com/uses-blockchain",
+                        "content": "Blockchain technology is being used in many industries to enhance security and efficiency."
+                    }
+                }
+            },
+            "metrics": {
+                "cost": 0.15
+            }
+        },
+        "thinking_ladder_agent": {
+            "classified_sources": {
+                "Fundamentals": [
+                    {
+                        "title": "Blockchain Fundamentals",
+                        "author": "David Clark",
+                        "date": "2024-04-01",
+                        "url": "https://example.com/blockchain-fundamentals",
+                        "content": "Blockchain is a decentralized digital ledger that records transactions.",
+                        "reason": "High relevance",
+                        "summary": "The basics of blockchain technology.",
+                        "quote": "Blockchain is a decentralized digital ledger that records transactions.",
+                        "class": "high"
+                    }
+                ],
+                "Applications": [
+                    {
+                        "title": "Blockchain Applications",
+                        "author": "Sophia Turner",
+                        "date": "2024-04-02",
+                        "url": "https://example.com/blockchain-applications",
+                        "content": "Blockchain technology has applications in various fields such as cryptocurrency and supply chain management.",
+                        "reason": "High relevance",
+                        "summary": "The various applications of blockchain.",
+                        "quote": "Blockchain technology has applications in various fields such as cryptocurrency and supply chain management.",
+                        "class": "high"
+                    }
+                ]
+            },
+            "metrics": {
+                "tokens": 260,
+                "cost": 0.22
+            }
+        },
+        "synthesis_agent": {
+            "synthesis": "Blockchain technology is a decentralized ledger system with applications in cryptocurrency and more...",
+            "metrics": {
+                "tokens": 630,
+                "cost": 0.45
+            }
+        },
+        "accountability_agent": {
+            "accountability": "The synthesis provides a clear understanding of how blockchain technology works and its applications.",
+            "metrics": {
+                "tokens": 150,
+                "cost": 0.07
+            }
+        },
+        "total_cost": 0.96
+    }
+]

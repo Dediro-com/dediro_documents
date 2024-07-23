@@ -1,0 +1,112 @@
+[
+    {
+        "query": "What is the future of renewable energy?",
+        "outline_agent": {
+            "main_title": "The Future of Renewable Energy",
+            "themes": [
+                {
+                    "title": "Technological Advances",
+                    "query": "What technological advances are expected in renewable energy?",
+                    "description": "Innovations in solar, wind, and other renewable energy technologies are expected to drive future growth."
+                },
+                {
+                    "title": "Economic Impact",
+                    "query": "What is the economic impact of renewable energy?",
+                    "description": "Renewable energy can create jobs, reduce energy costs, and stimulate economic growth."
+                }
+            ],
+            "metrics": {
+                "tokens": 150,
+                "cost": 0.08
+            }
+        },
+        "research_agent": {
+            "sources": {
+                "Technological Advances": {
+                    "web_sources": {
+                        "title": "Future Technologies in Renewable Energy",
+                        "author": "Olivia Green",
+                        "date": "2024-05-01",
+                        "url": "https://example.com/future-technologies",
+                        "content": "Innovations in renewable energy technologies are key to future energy sustainability."
+                    },
+                    "dataset_sources": {
+                        "title": "Advances in Renewable Energy",
+                        "author": "Henry Brown",
+                        "date": "2024-04-25",
+                        "url": "https://example.com/advances-renewable-energy",
+                        "content": "Technological advances in solar and wind energy are crucial for future development."
+                    }
+                },
+                "Economic Impact": {
+                    "web_sources": {
+                        "title": "Economic Benefits of Renewable Energy",
+                        "author": "Emma Clark",
+                        "date": "2024-05-02",
+                        "url": "https://example.com/economic-benefits",
+                        "content": "Renewable energy has the potential to create jobs and stimulate economic growth."
+                    },
+                    "dataset_sources": {
+                        "title": "Economic Impact of Renewables",
+                        "author": "Liam Wilson",
+                        "date": "2024-04-28",
+                        "url": "https://example.com/economic-impact-renewables",
+                        "content": "The economic impact of renewable energy includes job creation and reduced energy costs."
+                    }
+                }
+            },
+            "metrics": {
+                "cost": 0.14
+            }
+        },
+        "thinking_ladder_agent": {
+            "classified_sources": {
+                "Technological Advances": [
+                    {
+                        "title": "Future Technologies in Renewable Energy",
+                        "author": "Olivia Green",
+                        "date": "2024-05-01",
+                        "url": "https://example.com/future-technologies",
+                        "content": "Innovations in renewable energy technologies are key to future energy sustainability.",
+                        "reason": "High relevance",
+                        "summary": "The future technologies in renewable energy.",
+                        "quote": "Innovations in renewable energy technologies are key to future energy sustainability.",
+                        "class": "high"
+                    }
+                ],
+                "Economic Impact": [
+                    {
+                        "title": "Economic Benefits of Renewable Energy",
+                        "author": "Emma Clark",
+                        "date": "2024-05-02",
+                        "url": "https://example.com/economic-benefits",
+                        "content": "Renewable energy has the potential to create jobs and stimulate economic growth.",
+                        "reason": "High relevance",
+                        "summary": "Economic benefits of renewable energy.",
+                        "quote": "Renewable energy has the potential to create jobs and stimulate economic growth.",
+                        "class": "high"
+                    }
+                ]
+            },
+            "metrics": {
+                "tokens": 240,
+                "cost": 0.20
+            }
+        },
+        "synthesis_agent": {
+            "synthesis": "The future of renewable energy is bright with advancements in technology and positive economic impacts...",
+            "metrics": {
+                "tokens": 580,
+                "cost": 0.4
+            }
+        },
+        "accountability_agent": {
+            "accountability": "The synthesis covers the technological and economic aspects of renewable energy's future.",
+            "metrics": {
+                "tokens": 130,
+                "cost": 0.06
+            }
+        },
+        "total_cost": 0.88
+    }
+]

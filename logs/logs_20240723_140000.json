@@ -1,0 +1,112 @@
+[
+    {
+        "query": "What are the effects of climate change?",
+        "outline_agent": {
+            "main_title": "Effects of Climate Change",
+            "themes": [
+                {
+                    "title": "Global Warming",
+                    "query": "What is global warming?",
+                    "description": "The increase in Earth's average surface temperature due to rising levels of greenhouse gases."
+                },
+                {
+                    "title": "Sea Level Rise",
+                    "query": "How does climate change affect sea levels?",
+                    "description": "Melting ice caps and glaciers contribute to rising sea levels, which impact coastal regions."
+                }
+            ],
+            "metrics": {
+                "tokens": 123,
+                "cost": 0.05
+            }
+        },
+        "research_agent": {
+            "sources": {
+                "Global Warming": {
+                    "web_sources": {
+                        "title": "Global Warming Overview",
+                        "author": "John Doe",
+                        "date": "2024-01-01",
+                        "url": "https://example.com/global-warming",
+                        "content": "Global warming is the long-term heating of Earth's climate system."
+                    },
+                    "dataset_sources": {
+                        "title": "Impact of Global Warming",
+                        "author": "Jane Smith",
+                        "date": "2023-12-01",
+                        "url": "https://example.com/impact-global-warming",
+                        "content": "The impact of global warming includes severe weather events."
+                    }
+                },
+                "Sea Level Rise": {
+                    "web_sources": {
+                        "title": "Sea Level Rise Overview",
+                        "author": "Alice Johnson",
+                        "date": "2024-01-02",
+                        "url": "https://example.com/sea-level-rise",
+                        "content": "Sea level rise is caused by melting ice and thermal expansion."
+                    },
+                    "dataset_sources": {
+                        "title": "Effects of Rising Sea Levels",
+                        "author": "Bob Lee",
+                        "date": "2023-12-02",
+                        "url": "https://example.com/effects-sea-level-rise",
+                        "content": "Rising sea levels can lead to coastal flooding and erosion."
+                    }
+                }
+            },
+            "metrics": {
+                "cost": 0.1
+            }
+        },
+        "thinking_ladder_agent": {
+            "classified_sources": {
+                "Global Warming": [
+                    {
+                        "title": "Global Warming Overview",
+                        "author": "John Doe",
+                        "date": "2024-01-01",
+                        "url": "https://example.com/global-warming",
+                        "content": "Global warming is the long-term heating of Earth's climate system.",
+                        "reason": "High relevance",
+                        "summary": "An overview of global warming.",
+                        "quote": "Global warming is the long-term heating of Earth's climate system.",
+                        "class": "high"
+                    }
+                ],
+                "Sea Level Rise": [
+                    {
+                        "title": "Sea Level Rise Overview",
+                        "author": "Alice Johnson",
+                        "date": "2024-01-02",
+                        "url": "https://example.com/sea-level-rise",
+                        "content": "Sea level rise is caused by melting ice and thermal expansion.",
+                        "reason": "High relevance",
+                        "summary": "An overview of sea level rise.",
+                        "quote": "Sea level rise is caused by melting ice and thermal expansion.",
+                        "class": "high"
+                    }
+                ]
+            },
+            "metrics": {
+                "tokens": 245,
+                "cost": 0.2
+            }
+        },
+        "synthesis_agent": {
+            "synthesis": "Climate change has significant effects such as global warming and sea level rise...",
+            "metrics": {
+                "tokens": 567,
+                "cost": 0.4
+            }
+        },
+        "accountability_agent": {
+            "accountability": "The synthesized content provides a comprehensive overview of the effects of climate change.",
+            "metrics": {
+                "tokens": 123,
+                "cost": 0.05
+            }
+        },
+        "total_cost": 0.8
+    }
+]

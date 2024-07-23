@@ -1,0 +1,112 @@
+[
+    {
+        "query": "How does artificial intelligence impact job markets?",
+        "outline_agent": {
+            "main_title": "Impact of Artificial Intelligence on Job Markets",
+            "themes": [
+                {
+                    "title": "Automation",
+                    "query": "How does AI contribute to automation?",
+                    "description": "AI technologies automate repetitive tasks, affecting various job sectors."
+                },
+                {
+                    "title": "Job Creation",
+                    "query": "How does AI create new jobs?",
+                    "description": "The rise of AI leads to new job opportunities in tech and other industries."
+                }
+            ],
+            "metrics": {
+                "tokens": 135,
+                "cost": 0.06
+            }
+        },
+        "research_agent": {
+            "sources": {
+                "Automation": {
+                    "web_sources": {
+                        "title": "AI and Automation",
+                        "author": "Mike Brown",
+                        "date": "2024-02-01",
+                        "url": "https://example.com/ai-automation",
+                        "content": "AI is significantly contributing to the automation of many tasks."
+                    },
+                    "dataset_sources": {
+                        "title": "Automation Effects",
+                        "author": "Sarah Lee",
+                        "date": "2024-01-15",
+                        "url": "https://example.com/automation-effects",
+                        "content": "Automation affects employment in various sectors."
+                    }
+                },
+                "Job Creation": {
+                    "web_sources": {
+                        "title": "AI and Job Creation",
+                        "author": "Emily Davis",
+                        "date": "2024-02-02",
+                        "url": "https://example.com/ai-job-creation",
+                        "content": "AI is creating new job opportunities in tech."
+                    },
+                    "dataset_sources": {
+                        "title": "New Jobs in AI",
+                        "author": "John Smith",
+                        "date": "2024-01-20",
+                        "url": "https://example.com/new-jobs-ai",
+                        "content": "The rise of AI has led to the creation of new job roles."
+                    }
+                }
+            },
+            "metrics": {
+                "cost": 0.12
+            }
+        },
+        "thinking_ladder_agent": {
+            "classified_sources": {
+                "Automation": [
+                    {
+                        "title": "AI and Automation",
+                        "author": "Mike Brown",
+                        "date": "2024-02-01",
+                        "url": "https://example.com/ai-automation",
+                        "content": "AI is significantly contributing to the automation of many tasks.",
+                        "reason": "High relevance",
+                        "summary": "AI's impact on automation.",
+                        "quote": "AI is significantly contributing to the automation of many tasks.",
+                        "class": "high"
+                    }
+                ],
+                "Job Creation": [
+                    {
+                        "title": "AI and Job Creation",
+                        "author": "Emily Davis",
+                        "date": "2024-02-02",
+                        "url": "https://example.com/ai-job-creation",
+                        "content": "AI is creating new job opportunities in tech.",
+                        "reason": "High relevance",
+                        "summary": "AI's role in job creation.",
+                        "quote": "AI is creating new job opportunities in tech.",
+                        "class": "high"
+                    }
+                ]
+            },
+            "metrics": {
+                "tokens": 275,
+                "cost": 0.25
+            }
+        },
+        "synthesis_agent": {
+            "synthesis": "AI impacts job markets by automating tasks and creating new job opportunities...",
+            "metrics": {
+                "tokens": 590,
+                "cost": 0.42
+            }
+        },
+        "accountability_agent": {
+            "accountability": "The synthesis highlights both the positive and negative impacts of AI on job markets.",
+            "metrics": {
+                "tokens": 140,
+                "cost": 0.06
+            }
+        },
+        "total_cost": 0.91
+    }
+]

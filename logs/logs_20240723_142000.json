@@ -1,0 +1,112 @@
+[
+    {
+        "query": "What are the health benefits of a plant-based diet?",
+        "outline_agent": {
+            "main_title": "Health Benefits of a Plant-Based Diet",
+            "themes": [
+                {
+                    "title": "Nutritional Value",
+                    "query": "What is the nutritional value of a plant-based diet?",
+                    "description": "Plant-based diets are rich in essential nutrients and low in unhealthy fats."
+                },
+                {
+                    "title": "Disease Prevention",
+                    "query": "How does a plant-based diet prevent diseases?",
+                    "description": "Consuming plant-based foods reduces the risk of chronic diseases."
+                }
+            ],
+            "metrics": {
+                "tokens": 110,
+                "cost": 0.04
+            }
+        },
+        "research_agent": {
+            "sources": {
+                "Nutritional Value": {
+                    "web_sources": {
+                        "title": "Nutritional Benefits of Plant-Based Diet",
+                        "author": "Dr. Alex Green",
+                        "date": "2024-03-01",
+                        "url": "https://example.com/nutritional-benefits",
+                        "content": "Plant-based diets are rich in vitamins, minerals, and fiber."
+                    },
+                    "dataset_sources": {
+                        "title": "Essential Nutrients in Plant-Based Diets",
+                        "author": "Dr. Lisa White",
+                        "date": "2024-02-25",
+                        "url": "https://example.com/essential-nutrients",
+                        "content": "Plant-based diets provide essential nutrients that are beneficial for health."
+                    }
+                },
+                "Disease Prevention": {
+                    "web_sources": {
+                        "title": "Plant-Based Diet and Disease Prevention",
+                        "author": "Dr. John Black",
+                        "date": "2024-03-02",
+                        "url": "https://example.com/disease-prevention",
+                        "content": "A plant-based diet helps prevent various chronic diseases."
+                    },
+                    "dataset_sources": {
+                        "title": "Health Benefits of Plant-Based Foods",
+                        "author": "Dr. Emma Brown",
+                        "date": "2024-02-28",
+                        "url": "https://example.com/health-benefits",
+                        "content": "Plant-based foods have numerous health benefits and can prevent diseases."
+                    }
+                }
+            },
+            "metrics": {
+                "cost": 0.08
+            }
+        },
+        "thinking_ladder_agent": {
+            "classified_sources": {
+                "Nutritional Value": [
+                    {
+                        "title": "Nutritional Benefits of Plant-Based Diet",
+                        "author": "Dr. Alex Green",
+                        "date": "2024-03-01",
+                        "url": "https://example.com/nutritional-benefits",
+                        "content": "Plant-based diets are rich in vitamins, minerals, and fiber.",
+                        "reason": "High relevance",
+                        "summary": "The nutritional value of plant-based diets.",
+                        "quote": "Plant-based diets are rich in vitamins, minerals, and fiber.",
+                        "class": "high"
+                    }
+                ],
+                "Disease Prevention": [
+                    {
+                        "title": "Plant-Based Diet and Disease Prevention",
+                        "author": "Dr. John Black",
+                        "date": "2024-03-02",
+                        "url": "https://example.com/disease-prevention",
+                        "content": "A plant-based diet helps prevent various chronic diseases.",
+                        "reason": "High relevance",
+                        "summary": "Disease prevention through plant-based diets.",
+                        "quote": "A plant-based diet helps prevent various chronic diseases.",
+                        "class": "high"
+                    }
+                ]
+            },
+            "metrics": {
+                "tokens": 230,
+                "cost": 0.19
+            }
+        },
+        "synthesis_agent": {
+            "synthesis": "A plant-based diet offers numerous health benefits, including essential nutrients and disease prevention...",
+            "metrics": {
+                "tokens": 515,
+                "cost": 0.38
+            }
+        },
+        "accountability_agent": {
+            "accountability": "The synthesis effectively covers the health benefits of a plant-based diet.",
+            "metrics": {
+                "tokens": 120,
+                "cost": 0.05
+            }
+        },
+        "total_cost": 0.74
+    }
+]
